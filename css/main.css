@@ -1,0 +1,10 @@
+.index__main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.index__table {
+  width: 780px !important;
+}
