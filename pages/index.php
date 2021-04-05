@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="../css/form.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
-    <title>K8</title>
+    <title>K8 - Home</title>
 </head>
 
 <body>
@@ -26,6 +26,7 @@
                         <th>Name</th>
                         <th>Author</th>
                         <th>Price</th>
+                        <th></th>
                         <th></th>
                     </tr>
                 </thead>
@@ -44,9 +45,10 @@
                             echo '<td>' . 
                                 "<form method='POST' action='../controllers/delete.php'>
                                     <input type='hidden' name='id' value=". $data['id'] .">
-                                    <button type='submit' class='btn btn-link btn-sm'>Link</button>
+                                    <button type='submit' class='btn btn-link btn-sm'>Delete</button>
                                 </form>"    
                            . '</td>';
+                            echo '<td>' . '<a href=""><button type="submit" class="btn btn-link btn-sm">Update</button></a>' . '</td>';
                             echo '</tr>';
                         }
                     ?>

@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="../css/form.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
-    <title>K8 - Create</title>
+    <title>K8 - Update</title>
 </head>
 
 <body>
@@ -21,8 +21,23 @@
             <a href="./index.php" class="link-primary mt-4">Back to home</a>
             <div class="index__form__bs">
                 <?php
+                    include '../config/connect.php';
+                    if(!$_GET['id']) {
+                        header('location: ../pages/index.php');
+                        die();
+                    } else {
+                        if(isset($_GET['id'])) {
+                            $id = $_GET['id'];
+                            $listing =  $database->select('listing', "*", [
+                                'id' => $id
+                            ]);
+                            var_dump($listing);
+                        }
+                    }
+                    
+                    
 
-                    if(@$_GET['message']) {
+                     if(@$_GET['message']) {
                         echo '<div class="alert-light text-danger text-left py-1">'.$_GET['message'] .'</div>' ;
                     }
                 ?>
