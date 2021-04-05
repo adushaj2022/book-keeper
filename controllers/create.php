@@ -11,6 +11,7 @@
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if(empty($_POST['name']) || empty($_POST['author']) || empty($_POST['price'])) {
             header('location: ../pages/create.php?message=Please enter all fields');
+            die();
         }
 
         $name = test_input($_POST['name']);

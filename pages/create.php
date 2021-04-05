@@ -15,13 +15,13 @@
 <body>
     <div class="container">
         <nav class="navbar navbar-dark bg-dark">
-            <a class="navbar-brand px-2" href="#">Book Keeper</a>
+            <a class="navbar-brand px-2" href="./">Book Keeper</a>
         </nav>
         <div class="index__form">
             <a href="./index.php" class="link-primary mt-4">Back to home</a>
             <div class="index__form__bs">
                 <?php
-                    if(@$_GET['message'] == true) {
+                    if(@$_GET['message']) {
                         echo '<div class="alert-light text-danger text-left py-1">'.$_GET['message'] .'</div>' ;
                     }
                 ?>

@@ -26,6 +26,7 @@
                         <th>Name</th>
                         <th>Author</th>
                         <th>Price</th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -40,6 +41,12 @@
                             echo '<td>' . $data['name'] . '</td>';
                             echo '<td>' . $data['author'] . '</td>';
                             echo '<td>' . $data['price'] . '</td>';
+                            echo '<td>' . 
+                                "<form method='POST' action='../controllers/delete.php'>
+                                    <input type='hidden' name='id' value=". $data['id'] .">
+                                    <button type='submit' class='btn btn-link btn-sm'>Link</button>
+                                </form>"    
+                           . '</td>';
                             echo '</tr>';
                         }
                     ?>
