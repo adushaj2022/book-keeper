@@ -18,7 +18,6 @@ git clone https://github.com/adushaj2022/book-keeper.git
 php composer.phar install
 ```
 
-```
 ## Features
 <ul>
   <li>Error Handling</li>
