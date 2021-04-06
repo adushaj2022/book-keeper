@@ -2,6 +2,8 @@
 
 Simple CRUD Application
 
+![image](https://user-images.githubusercontent.com/47046091/113714252-3443b980-96b6-11eb-8b19-6b77ade4acd7.png)
+
 # Tech Stack
 
 PHP (8.0) <br>
