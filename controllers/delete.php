@@ -10,11 +10,9 @@
 
         if ($data->rowCount() === 1) {
             header('location: ../pages/index.php');
-        } else {
+        } else { 
             http_response_code(404);
             echo '<h1>404 Not Found</h1>';
         }
         die();
     }
-   
- ?>
