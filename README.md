@@ -24,6 +24,7 @@ php composer.phar install
 <ul>
   <li>Error Handling</li>
   <li>CRUD Functionality</li>
+  <li>Search Bar</li>
 </ul>
 
 ## Contributing
