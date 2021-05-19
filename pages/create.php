@@ -16,44 +16,44 @@
         <nav class="navbar navbar-dark bg-dark">
             <a class="navbar-brand px-2" href="./">Book Keeper</a>
         </nav>
+        <div class="index__form">
+            <a href="./index.php" class="link-primary mt-4">Back to home</a>
+            <div class="index__form__bs">
+                <?php
 
-        <a href="./index.php" class="link-primary mt-4">Back to home</a>
-        <div class="index__form__bs">
-            <?php
+                if (@$_GET['message']) {
+                    echo '<div class="alert-light text-danger text-left py-1">' . $_GET['message'] . '</div>';
+                }
+                ?>
+                <form role="form" method="POST" action="../controllers/create.php">
 
-            if (@$_GET['message']) {
-                echo '<div class="alert-light text-danger text-left py-1">' . $_GET['message'] . '</div>';
-            }
-            ?>
-            <form role="form" method="POST" action="../controllers/create.php">
-
-                <div class="form-group mt-2">
-                    <label>Title</label>
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="The Great Gatsby" name="name">
+                    <div class="form-group mt-2">
+                        <label>Title</label>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="The Great Gatsby" name="name">
+                        </div>
                     </div>
-                </div>
-                <div class="form-group mt-2">
-                    <label>Author</label>
-                    <input type="text" class="form-control" placeholder="Scott Fitzgerald" name="author">
+                    <div class="form-group mt-2">
+                        <label>Author</label>
+                        <input type="text" class="form-control" placeholder="Scott Fitzgerald" name="author">
 
-                </div>
-                <div class="form-group mt-2">
-                    <label>Price</label>
-                    <input class="form-control" placeholder="7.99" name="price">
-                </div>
+                    </div>
+                    <div class="form-group mt-2">
+                        <label>Price</label>
+                        <input class="form-control" placeholder="7.99" name="price">
+                    </div>
 
 
-                <div class="form-group mt-2">
-                    <button type="submit" class="btn btn-primary btn-block">Send</button>
-                </div>
-            </form>
+                    <div class="form-group mt-2">
+                        <button type="submit" class="btn btn-primary btn-block">Send</button>
+                    </div>
+                </form>
+            </div>
+
+
         </div>
 
     </div>
-
-    </div>
-
 
 </body>
 

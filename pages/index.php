@@ -25,28 +25,45 @@
                     <input type="search" name="search" class="form-control" placeholder="Search for a listing" aria-label="Search" />
 
                 </form>
-            </div <div class="index__form">
-            <table class="table mt-3 px-5 index__table">
-                <thead>
-                    <tr>
-                        <th>#</th>
-                        <th>Name</th>
-                        <th>Author</th>
-                        <th>Price</th>
-                        <th></th>
-                        <th></th>
-                    </tr>
-                </thead>
-                <tbody>
+            </div>
+            <div class="index__form">
+                <table class="table mt-3 px-5 index__table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Name</th>
+                            <th>Author</th>
+                            <th>Price</th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
 
-                    <?php
+                        <?php
 
-                    include '../config/connect.php';
-                    $datas = $database->select('listing', "*");
+                        include '../config/connect.php';
+                        $datas = $database->select('listing', "*");
 
-                    foreach ($datas as $data) {
-                        if (isset($_GET['search'])) {
-                            if (str_contains(strtolower($data['name']), strtolower($_GET['search']))) {
+                        foreach ($datas as $data) {
+                            if (isset($_GET['search'])) {
+                                if (str_contains(strtolower($data['name']), strtolower($_GET['search']))) {
+                                    echo '<tr>';
+                                    echo '<td>' . $data['id'] . '</td>';
+                                    echo '<td>' . $data['name'] . '</td>';
+                                    echo '<td>' . $data['author'] . '</td>';
+                                    echo '<td>' . $data['price'] . '</td>';
+                                    echo '<td>' .
+                                        "<form method='POST' action='../controllers/delete.php'>
+                                        <input type='hidden' name='id' value=" . $data['id'] . ">
+                                        <button type='submit' class='btn btn-link btn-sm'>Delete</button>
+                                     </form>"
+                                        . '</td>';
+                                    echo '<td>' . "<a href='update.php?id=" . $data['id'] . "'><button type='submit' class='btn btn-link btn-sm'>Update</button></a>" . '</td>';
+                                    echo '</tr>';
+                                }
+                            } else {
+
                                 echo '<tr>';
                                 echo '<td>' . $data['id'] . '</td>';
                                 echo '<td>' . $data['name'] . '</td>';
@@ -54,37 +71,21 @@
                                 echo '<td>' . $data['price'] . '</td>';
                                 echo '<td>' .
                                     "<form method='POST' action='../controllers/delete.php'>
-                                        <input type='hidden' name='id' value=" . $data['id'] . ">
-                                        <button type='submit' class='btn btn-link btn-sm'>Delete</button>
-                                     </form>"
+                                    <input type='hidden' name='id' value=" . $data['id'] . ">
+                                    <button type='submit' class='btn btn-link btn-sm'>Delete</button>
+                                 </form>"
                                     . '</td>';
                                 echo '<td>' . "<a href='update.php?id=" . $data['id'] . "'><button type='submit' class='btn btn-link btn-sm'>Update</button></a>" . '</td>';
                                 echo '</tr>';
                             }
-                        } else {
-
-                            echo '<tr>';
-                            echo '<td>' . $data['id'] . '</td>';
-                            echo '<td>' . $data['name'] . '</td>';
-                            echo '<td>' . $data['author'] . '</td>';
-                            echo '<td>' . $data['price'] . '</td>';
-                            echo '<td>' .
-                                "<form method='POST' action='../controllers/delete.php'>
-                                    <input type='hidden' name='id' value=" . $data['id'] . ">
-                                    <button type='submit' class='btn btn-link btn-sm'>Delete</button>
-                                 </form>"
-                                . '</td>';
-                            echo '<td>' . "<a href='update.php?id=" . $data['id'] . "'><button type='submit' class='btn btn-link btn-sm'>Update</button></a>" . '</td>';
-                            echo '</tr>';
                         }
-                    }
-                    ?>
+                        ?>
 
-                </tbody>
-            </table>
+                    </tbody>
+                </table>
+            </div>
+
         </div>
-
-    </div>
 
 
 </body>
