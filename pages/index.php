@@ -14,7 +14,13 @@
 <body>
     <div class="container">
         <nav class="navbar navbar-dark bg-dark">
-            <a class="navbar-brand px-2" href="#">Book Keeper</a>
+            <?php
+            if (isset($_GET['search'])) {
+                echo '<a class="navbar-brand px-2" href="./">Book Keeper</a>';
+            } else {
+                echo '<a class="navbar-brand px-2" href="#">Book Keeper</a>';
+            }
+            ?>
         </nav>
 
         <div class="index__main">
