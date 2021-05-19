@@ -64,7 +64,7 @@
 
 
                     <div class="form-group mt-3">
-                        <button type="submit" class="btn btn-secondary btn-block">Send</button>
+                        <button type="submit" class="btn btn-secondary btn-block">Update</button>
                     </div>
                 </form>
             </div>

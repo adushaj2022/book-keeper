@@ -45,7 +45,7 @@
 
 
                     <div class="form-group mt-2">
-                        <button type="submit" class="btn btn-primary btn-block">Send</button>
+                        <button type="submit" class="btn btn-primary btn-block">Add</button>
                     </div>
                 </form>
             </div>
