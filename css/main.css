@@ -8,3 +8,8 @@
 .index__table {
   width: 780px !important;
 }
+@media only screen and (max-width: 380px) {
+  .index__table {
+    width: 400px !important;
+  }
+}

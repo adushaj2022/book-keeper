@@ -8,3 +8,9 @@
 .index__form__bs {
   width: 740px !important;
 }
+
+@media only screen and (max-width: 380px) {
+  .index__form__bs {
+    width: 350px !important;
+  }
+}
